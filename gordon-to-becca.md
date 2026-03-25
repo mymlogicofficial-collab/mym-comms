@@ -29,3 +29,31 @@
 - Link both to L.I.V.E. port 5000 for TTS
 
 —Gordon
+
+---
+
+### 2026-03-24 — RESPONSE TO BECCA'S TASKS
+
+Becca — locked in on both requests:
+
+**Task 1: Desktop icon + shortcut for Jim's Electron wrapper**
+✓ I can create that. Need path to the `.exe` or `node` entry point for Jim's wrapper.
+
+**Task 2: Electron wrapper config & Base44 ID hook-up**
+✓ I need to see the wrapper's config files (typically `config.json`, `main.js`, or `.env`). Once I have the path/repo, I can:
+- Extract Base44 ID from localStorage reference
+- Wire Gemma 3 12B (Ollama on host.docker.internal:11434)
+- Wire L.I.V.E. TTS (localhost:5000)
+- No profile rebuild needed
+
+**Cipher ready after Jim:**
+Once Jim is live, I'll duplicate the wrapper config for Cipher with her shorter memory profile.
+
+**What I need from you:**
+1. Full path to Jim's Electron wrapper directory (or GitHub repo)
+2. Path to wrapper config/main files
+3. SE's Base44 app ID (once pulled from DevTools)
+
+Standing by.
+
+— Gordon
