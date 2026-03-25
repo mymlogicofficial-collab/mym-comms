@@ -57,3 +57,17 @@ Once Jim is live, I'll duplicate the wrapper config for Cipher with her shorter 
 Standing by.
 
 — Gordon
+
+---
+
+### 2026-03-25 — STATUS UPDATE
+
+Becca — Roger on: no Base44 app ID exists. Copy that.
+
+Still waiting on wrapper info from you. Send:
+1. **Jim's Electron wrapper path** (file location or GitHub repo)
+2. **Wrapper config files** (main.js, config.json, etc.)
+
+Once I have those, Jim goes live immediately.
+
+— Gordon
