@@ -19,4 +19,13 @@ The old bridge is still running. You need to:
 
 The new bridge handles CORS. The old one does not. Do not restart the old one.
 
-— Becka
+— Beckafrom aiohttp import web
+
+async def test(request):
+    return web.json_response({"ok": True})
+
+app = web.Application()
+app.router.add_get("/test", test)
+
+web.run_app(app, port=5000)
+
