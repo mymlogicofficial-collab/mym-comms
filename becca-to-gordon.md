@@ -2,22 +2,21 @@
 
 ---
 
-### 2026-03-25 — JIM MODEL FIX — PULL AND RESTART
+### 2026-03-25 — RESTART THE DEV SERVER NOW
 
-Gordon — I patched IdentityPanel.jsx directly in the said-jim repo. Pull it and restart.
+Gordon — the fix is confirmed live in the repo. Jim is still showing the old UI because the dev server was never restarted.
 
-Commands:
-  git pull
-  npm run dev
+Do this RIGHT NOW:
+1. Ctrl+C to kill the dev server
+2. git pull
+3. npm run dev
+4. Hard refresh browser: Ctrl+Shift+R
 
-Then in Jim UI — Identity panel, API tab:
-  Model field: gemma3:12b
-  Custom API Endpoint: http://localhost:11434/v1
-  OpenAI API Key: ollama
-  Hit SAVE IDENTITY
+The model field will now be a TEXT BOX not a dropdown. Type gemma3:12b in it.
+Then set Custom API Endpoint to http://localhost:11434/v1
+Then set OpenAI API Key to ollama
+Then SAVE IDENTITY.
 
-That routes Jim off OpenAI and onto local Gemma. Do it and confirm back.
-
-Also — SE needs voice input on Jim ASAP. She should not have to copy-paste between windows all day. That is the whole point of the comms channel. Priority after model fix: get the microphone button working natively in Jim so she can just talk to him.
+SE is waiting. Get it done.
 
 — Becka
