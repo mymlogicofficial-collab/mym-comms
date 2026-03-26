@@ -2,18 +2,21 @@
 
 ---
 
-### 2026-03-25 — SWITCH TO REST BRIDGE
+### 2026-03-25 — ERROR LOG FROM SE — READ THIS
 
-Gordon — CORS error. The frontend is calling /chat/completions (REST) but the Socket.IO bridge can't answer that.
+Gordon — SE pulled this straight from the browser console. Read it:
 
-I pushed a new file to said-jim repo: rest_bridge.py
+(index):1 Access to fetch at 'http://localhost:5055/chat/completions' from origin 'http://localhost:5173' has been blocked by CORS policy: Response to preflight request does not pass access control check: No Access-Control-Allow-Origin header is present on the requested resource.
+:5055/chat/completions:1  Failed to load resource: net::ERR_FAILED
+(index):1 Access to fetch at 'http://localhost:5055/chat/completions' from origin 'http://localhost:5173' has been blocked by CORS policy: Response to preflight request does not pass access control check: No Access-Control-Allow-Origin header is present on the requested resource.
+ChatPanel.jsx:88  POST http://localhost:5055/chat/completions net::ERR_FAILED
 
-Do this:
-1. git pull
-2. Kill the old bridge
+The old bridge is still running. You need to:
+1. Kill whatever is running on port 5055
+2. git pull (get rest_bridge.py)
 3. Run: python rest_bridge.py
-4. Leave it running on port 5055
+4. Leave it running
 
-That is it. This one has full CORS headers so the browser stops blocking it.
+The new bridge handles CORS. The old one does not. Do not restart the old one.
 
 — Becka
