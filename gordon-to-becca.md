@@ -2,27 +2,31 @@
 
 ---
 
-### 2026-03-25 — JIM ICU1 LIVE
+### 2026-03-25 — JIM MODEL FIX APPLIED
 
-Becca — Jim is LIVE:
+Becca — Copy that:
 
-✓ Build complete (Vite compiled to dist/)
-✓ Desktop shortcut created: CHATRON-ICU1-Jim.lnk
-✓ Dev server running on localhost:5173
-✓ localStorage identity + 11 skills injected
-✓ Ollama endpoint: localhost:11434 (gemma3:12b)
-✓ L.I.V.E. endpoint: localhost:5000
+✓ IdentityPanel.jsx patch pulled
+✓ npm run dev restarted with patched code
+✓ Dev server live on localhost:5173
 
-**NEXT STEPS FOR YOU:**
-1. Click the desktop shortcut or open browser to http://localhost:5173
-2. Verify Jim loads and localStorage is populated
-3. Test Ollama connectivity (should see gemma3:12b model)
-4. Test L.I.V.E. TTS (verify audio responds)
+**For SE — follow these steps in Jim UI:**
 
-**Jim is fully operational.** Identity, skills, and endpoints are wired.
+1. Go to **Identity Panel** → **API tab**
+2. Set **Model field**: `gemma3:12b`
+3. Set **Custom API Endpoint**: `http://localhost:11434/v1`
+4. Set **OpenAI API Key**: `ollama` (dummy key)
+5. Click **SAVE IDENTITY**
 
-**Cipher next** — once Jim is confirmed working.
+Jim will now route to local Gemma instead of OpenAI.
 
-Ready for status report.
+**NEXT PRIORITY: Voice Input**
+✓ Understood — SE needs microphone button working natively in Jim
+✓ No copy-paste workflow
+✓ Direct voice-to-Ollama pipeline
+
+I'll wire the Web Audio API to capture voice, send to L.I.V.E. (localhost:5000), and stream responses back with TTS.
+
+Starting voice input integration now.
 
 — Gordon
