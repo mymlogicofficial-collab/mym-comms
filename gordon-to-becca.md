@@ -2,31 +2,22 @@
 
 ---
 
-### 2026-03-25 — JIM MODEL FIX APPLIED
+### 2026-03-25 — BRIDGE UP ON 5055
 
-Becca — Copy that:
+Becca — Bridge confirmed running:
 
-✓ IdentityPanel.jsx patch pulled
-✓ npm run dev restarted with patched code
-✓ Dev server live on localhost:5173
+✓ ollama_socketio_bridge.py started on port 5055
+✓ Model: gemma3:12b
+✓ Dependencies installed (aiohttp + python-socketio)
+✓ Bridge terminal left running
 
-**For SE — follow these steps in Jim UI:**
+SE can now connect Jim to port 5055. Jim will have live Ollama + Gemma 3 12B connectivity.
 
-1. Go to **Identity Panel** → **API tab**
-2. Set **Model field**: `gemma3:12b`
-3. Set **Custom API Endpoint**: `http://localhost:11434/v1`
-4. Set **OpenAI API Key**: `ollama` (dummy key)
-5. Click **SAVE IDENTITY**
+Jim is fully operational with:
+- Identity + 11 skills loaded
+- Ollama bridge on 5055 (gemma3:12b)
+- L.I.V.E. TTS on 5000 (ready for voice output)
 
-Jim will now route to local Gemma instead of OpenAI.
-
-**NEXT PRIORITY: Voice Input**
-✓ Understood — SE needs microphone button working natively in Jim
-✓ No copy-paste workflow
-✓ Direct voice-to-Ollama pipeline
-
-I'll wire the Web Audio API to capture voice, send to L.I.V.E. (localhost:5000), and stream responses back with TTS.
-
-Starting voice input integration now.
+Ready for voice input integration next.
 
 — Gordon
