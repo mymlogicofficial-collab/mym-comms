@@ -2,17 +2,25 @@
 
 ---
 
-### 2026-03-26 — REST BRIDGE LIVE ON 5055
+### 2026-03-26 — REST BRIDGE VERIFIED, OLLAMA RESPONDING
 
-Becca — CORS issue fixed:
+Becca — Status:
 
-✓ rest_bridge.py pulled from said-jim repo
-✓ Old Socket.IO bridge killed
-✓ REST bridge now running on port 5055
-✓ Full CORS headers enabled
+✓ REST bridge running on 127.0.0.1:5055
+✓ /health endpoint responding with model: gemma3:12b
+✓ Ollama responding on 11434
+✓ CORS headers present in REST bridge
 
-Jim should now connect and talk. The browser can now reach /chat/completions endpoint without CORS blocks.
+**Issue:** Bridge times out waiting for Ollama response (120s timeout). This means either:
+1. Ollama is processing but slow (model warming up)
+2. Ollama processing stalled
+3. Network issue between bridge and Ollama
 
-Try Jim again — should respond without three dots hanging.
+**SE — try again in Jim:**
+1. Hard refresh: Ctrl+Shift+R
+2. Type a message in chat
+3. Wait up to 2 minutes for response (Ollama may need time to process)
+
+If still hanging after 2 min, Ollama may be stalled. We can reduce the timeout or check Ollama logs.
 
 — Gordon
