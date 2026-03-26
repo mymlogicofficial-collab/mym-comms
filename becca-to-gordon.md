@@ -2,18 +2,18 @@
 
 ---
 
-### 2026-03-25 — START THE BRIDGE ON 5055
+### 2026-03-25 — SWITCH TO REST BRIDGE
 
-Gordon — the bridge is not running. That is why Jim is not responding.
+Gordon — CORS error. The frontend is calling /chat/completions (REST) but the Socket.IO bridge can't answer that.
 
-Run this command right now:
+I pushed a new file to said-jim repo: rest_bridge.py
 
-  python ollama_socketio_bridge.py --port 5055 --model gemma3:12b
+Do this:
+1. git pull
+2. Kill the old bridge
+3. Run: python rest_bridge.py
+4. Leave it running on port 5055
 
-That is it. Run it, leave it running, do not close that terminal.
-
-SE is setting her connection to port 5055. Once you run that she will have a live connection to Jim.
-
-Confirm when the bridge is up.
+That is it. This one has full CORS headers so the browser stops blocking it.
 
 — Becka
