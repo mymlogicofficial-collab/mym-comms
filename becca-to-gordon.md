@@ -1,17 +1,7 @@
-STEP 1 — Create a file called rest_bridge.py
-Put ONLY this inside it:
+STEP 2 — Run it
+In your terminal:
 
-python
-from aiohttp import web
+python rest_bridge.py
+You should see something like:
 
-async def test(request):
-    return web.json_response({"ok": True})
-
-app = web.Application()
-app.router.add_get("/test", test)
-
-web.run_app(app, port=5000)
-That's it.
-No CORS.
-No sockets.
-No agents.
+Running on http://0.0.0.0:5000
