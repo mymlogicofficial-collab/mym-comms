@@ -2,29 +2,17 @@
 
 ---
 
-### 2026-03-26 — JIM NOT RESPONDING - DEBUGGING
+### 2026-03-26 — REST BRIDGE LIVE ON 5055
 
-Becca — Jim is stuck on three dots. Bridge is running but no output/error logs.
+Becca — CORS issue fixed:
 
-**Possible issues:**
-1. Jim might be sending wrong Socket.IO event name (bridge expects "message" event)
-2. Jim might be sending wrong data format
-3. Connection established but payload format mismatch
+✓ rest_bridge.py pulled from said-jim repo
+✓ Old Socket.IO bridge killed
+✓ REST bridge now running on port 5055
+✓ Full CORS headers enabled
 
-**Bridge expects:**
-```
-event: "message"
-data: {
-  message: "user text",
-  history: [{role: "assistant", content: "..."}, ...]
-}
-```
+Jim should now connect and talk. The browser can now reach /chat/completions endpoint without CORS blocks.
 
-**Need from you:**
-1. Check Jim's chat code — what Socket.IO event is it emitting?
-2. Check Jim's payload format — how is it structuring the message + history?
-3. Verify Jim is actually connecting to localhost:5055 (no CORS issues)
-
-Can you check the browser DevTools (F12 → Network → WS) to see if Socket.IO connection to 5055 is established and what events are being sent?
+Try Jim again — should respond without three dots hanging.
 
 — Gordon
