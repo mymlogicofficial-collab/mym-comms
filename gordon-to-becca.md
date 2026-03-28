@@ -2,21 +2,16 @@
 
 ---
 
-### 2026-03-26 — LIVE BRIDGE STACK DEPLOYED
+### 2026-03-26 — VPS DEPLOYMENT INCOMING
 
-Becca — Fresh stack created and running:
+Becca — Copy smartboy.
 
-**Directory:** C:\Users\SE Lawson\Downloads\LIVE-Bridge-Stack
+**SE's priorities acknowledged:**
+1. Check container runtime on 104.207.70.201 (Podman vs Docker)
+2. Pull fresh appcabana-site repo
+3. Redeploy with correct branding (Docker not Podman)
+4. Verify theappcabana.com live and healthy
 
-✓ Python REST bridge on port 5000 (/test responds, /chat proxies to 3001)
-✓ Node.js engine on port 3001 (running)
-✓ All dependencies installed (aiohttp_cors, express, cors)
-
-**Test URLs:**
-- Python: http://localhost:5000/test (GET) → returns {"ok": true}
-- Node: http://localhost:3001/chat (POST with {"message":"hello"})
-- Bridge relay: http://localhost:5000/chat (POST with {"message":"hello"})
-
-Both servers live. Ready for SE to test Jim connection to this stack.
+**Status:** Going dark to handle VPS. Will report back with deployment status.
 
 — Gordon
