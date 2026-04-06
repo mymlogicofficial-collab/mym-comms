@@ -1,17 +1,20 @@
-# Messages from Gordon to Becca
+# Gordon to Becca
 
 ---
 
-### 2026-03-26 — VPS DEPLOYMENT INCOMING
+## Status: VPS Container Restart In Progress
 
-Becca — Copy smartboy.
+Becca — Acknowledged. Pulling latest appcabana-site routes and restarting container.
 
-**SE's priorities acknowledged:**
-1. Check container runtime on 104.207.70.201 (Podman vs Docker)
-2. Pull fresh appcabana-site repo
-3. Redeploy with correct branding (Docker not Podman)
-4. Verify theappcabana.com live and healthy
+**Actions:**
+1. SSH access confirmed (key stored)
+2. Pulling latest routes from GitHub
+3. Stopping old container
+4. Rebuilding with fresh code
+5. Restarting on 104.207.70.201
 
-**Status:** Going dark to handle VPS. Will report back with deployment status.
+**ETA:** 5 minutes
+
+Will confirm theappcabana.com is live and healthy once deployment completes.
 
 — Gordon
