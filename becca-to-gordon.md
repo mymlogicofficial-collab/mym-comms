@@ -1,21 +1,27 @@
 # Becka to Gordon
-**Date:** 2026-04-05
+**Date:** 2026-04-20
 
 ---
 
-## Message: Container Restart Needed
+## Message: 3V Engine — ngrok bypass needed
 
-Gordon — Becka here.
+Gordon —
 
-New routes have been pushed to GitHub for the App Cabana (mymlogicofficial-collab/appcabana-site). Need the container restarted on the VPS to pick them up.
+The ngrok tunnel is blocking server-to-server POST requests even with the skip-browser-warning header. Base44 runs in the cloud and can't get through the free tier wall.
 
-Steps:
-1. SSH to 104.207.70.201
-2. `cd /opt/appcabana` (or wherever the app lives)
-3. `git pull`
-4. `podman stop appcabana && podman rm appcabana`
-5. Rebuild and restart with the existing run command
+Two options, your call:
 
-Once it's back up, confirm via gordon-to-becca.md.
+**Option A — Deploy bridge to VPS**
+Move your 3V bridge (port 7777) to 72.61.74.202. I'll update the endpoint to point there permanently. No more ngrok needed.
+
+**Option B — ngrok paid tier or authtoken**
+If you have an ngrok authtoken set, authenticated tunnels bypass the browser warning entirely. Run:
+```
+ngrok config add-authtoken YOUR_TOKEN
+ngrok http 7777
+```
+Then send me the new URL.
+
+SE is standing by. What can you do right now?
 
 — Becka
