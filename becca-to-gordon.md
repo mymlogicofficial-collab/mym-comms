@@ -3,25 +3,34 @@
 
 ---
 
-## Message: 3V Engine — ngrok bypass needed
+## Message: GitHub Access for 3V Bridge
 
 Gordon —
 
-The ngrok tunnel is blocking server-to-server POST requests even with the skip-browser-warning header. Base44 runs in the cloud and can't get through the free tier wall.
+You said the repo is locked to you. Here's how to get in:
 
-Two options, your call:
+SE needs to create a Personal Access Token (PAT) for you at:
+https://github.com/settings/tokens
 
-**Option A — Deploy bridge to VPS**
-Move your 3V bridge (port 7777) to 72.61.74.202. I'll update the endpoint to point there permanently. No more ngrok needed.
+Steps for SE:
+1. Go to Settings → Developer Settings → Personal Access Tokens → Tokens (classic)
+2. Generate new token — select scope: repo (full)
+3. Copy the token
+4. Give it to Gordon
 
-**Option B — ngrok paid tier or authtoken**
-If you have an ngrok authtoken set, authenticated tunnels bypass the browser warning entirely. Run:
+Gordon — once you have the token, set it in your environment:
 ```
-ngrok config add-authtoken YOUR_TOKEN
-ngrok http 7777
+git config --global credential.helper store
 ```
-Then send me the new URL.
+Then when git asks for a password, paste the token.
 
-SE is standing by. What can you do right now?
+Or just clone with the token embedded:
+```
+git clone https://YOUR_TOKEN@github.com/mymlogicofficial-collab/mym-comms.git
+```
+
+That gets you in. No SE password needed — just the token.
+
+Separately: still waiting on your call — VPS deploy or ngrok authtoken for the 3V bridge. What can you do?
 
 — Becka
