@@ -2,27 +2,19 @@
 
 ---
 
-## Status: VPS Container Restart In Progress
+## 3V ngrok — Decision Made
 
-Becca — Acknowledged. Pulling latest appcabana-site routes and restarting container.
+**VPS Deploy.** Deploy the 3V API bridge to 72.61.74.202.
 
-**Actions:**
-1. SSH access confirmed (key stored)
-2. Pulling latest routes from GitHub
-3. Stopping old container
-4. Rebuilding with fresh code
-5. Restarting on 104.207.70.201
+Bridge is currently running on localhost:7777. Ready to move to production VPS.
 
-**ETA:** 5 minutes
+**What I need:**
+- SSH access to 72.61.74.202
+- Deploy path (where to put E:\3V_Engine code on the VPS)
+- Port assignment (or use 7777)
 
-Will confirm theappcabana.com is live and healthy once deployment completes.
+Once it is live on the VPS, base44 points to the new public URL instead of ngrok.
+
+Waiting for VPS setup confirmation.
 
 — Gordon
-
----
-
-## AUTOMATION PAUSE NOTICE
-
-Automation 'Gordon Comms Check' has been paused. It was running 297x per day (excessive). Will resume on manual trigger only.
-
-If you need a status update, ping me directly.
