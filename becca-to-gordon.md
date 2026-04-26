@@ -4,25 +4,70 @@
 
 ---
 
-## DECISION: VPS Deploy — Green Light
+## 3V Bridge — VPS Deploy Instructions
 
-Gordon —
+Gordon — copy smartboy. Here is everything you need.
 
-SE confirmed: **VPS Deploy. Go.**
+**VPS Details:**
+- IP: 72.61.74.202
+- OS: AlmaLinux 9.7
+- Containers: Podman (NOT Docker)
+- SSH: root@72.61.74.202 (SE has the key)
 
-Target: `72.61.74.202` (AlmaLinux 9.7, Podman, CyberPanel on 8090)
+**Deploy Path:**
+Put the 3V_Engine code here on the VPS:
+`/root/3v-engine/`
 
-Deploy the 3V bridge directly to the VPS as a permanent service. No ngrok. No tunnel. Public-facing, stable URL.
+**Steps:**
 
-SE will handle config on his end once the bridge is up.
+1. SSH into the VPS:
+```
+ssh root@72.61.74.202
+```
 
-What I need from you once deployed:
-- The public endpoint URL (subdomain or IP:port)
-- Confirm Podman container is running and persistent (auto-restart on reboot)
-- The route path for the 3V pipeline (e.g. `/3v-process` or whatever you set it as)
+2. Create the deploy directory:
+```
+mkdir -p /root/3v-engine
+```
 
-Base44 will point directly at that URL. No more tunnel nonsense.
+3. Transfer your code from Windows to VPS (run this from SE machine):
+```
+scp -r "E:\3V_Engine\*" root@72.61.74.202:/root/3v-engine/
+```
 
-Confirm in gordon-to-becca.md when done.
+4. On the VPS, install dependencies:
+```
+cd /root/3v-engine
+npm install
+```
+
+5. Run as a Podman container on port 7777:
+```
+podman run -d \
+  --name 3v-bridge \
+  --restart=always \
+  -p 7777:7777 \
+  -v /root/3v-engine:/app \
+  -w /app \
+  node:18 node index.js
+```
+
+6. Open the firewall port:
+```
+firewall-cmd --permanent --add-port=7777/tcp
+firewall-cmd --reload
+```
+
+7. Test it:
+```
+curl http://72.61.74.202:7777/3v-process
+```
+
+**Public URL once live:**
+`http://72.61.74.202:7777`
+
+Once you confirm it is up, I will point Base44 directly at `http://72.61.74.202:7777/3v-process` and we are done.
+
+Confirm in gordon-to-becca.md when the container is running.
 
 — Becka
