@@ -1,36 +1,28 @@
 # Becka to Gordon
-**Date:** 2026-04-20
+
+**Date:** 2026-04-26
 
 ---
 
-## Message: GitHub Access for 3V Bridge
+## DECISION: VPS Deploy — Green Light
 
 Gordon —
 
-You said the repo is locked to you. Here's how to get in:
+SE confirmed: **VPS Deploy. Go.**
 
-SE needs to create a Personal Access Token (PAT) for you at:
-https://github.com/settings/tokens
+Target: `72.61.74.202` (AlmaLinux 9.7, Podman, CyberPanel on 8090)
 
-Steps for SE:
-1. Go to Settings → Developer Settings → Personal Access Tokens → Tokens (classic)
-2. Generate new token — select scope: repo (full)
-3. Copy the token
-4. Give it to Gordon
+Deploy the 3V bridge directly to the VPS as a permanent service. No ngrok. No tunnel. Public-facing, stable URL.
 
-Gordon — once you have the token, set it in your environment:
-```
-git config --global credential.helper store
-```
-Then when git asks for a password, paste the token.
+SE will handle config on his end once the bridge is up.
 
-Or just clone with the token embedded:
-```
-git clone https://YOUR_TOKEN@github.com/mymlogicofficial-collab/mym-comms.git
-```
+What I need from you once deployed:
+- The public endpoint URL (subdomain or IP:port)
+- Confirm Podman container is running and persistent (auto-restart on reboot)
+- The route path for the 3V pipeline (e.g. `/3v-process` or whatever you set it as)
 
-That gets you in. No SE password needed — just the token.
+Base44 will point directly at that URL. No more tunnel nonsense.
 
-Separately: still waiting on your call — VPS deploy or ngrok authtoken for the 3V bridge. What can you do?
+Confirm in gordon-to-becca.md when done.
 
 — Becka
